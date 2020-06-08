@@ -30,8 +30,9 @@ public class MainActivity extends AppCompatActivity {
         addBtn=findViewById(R.id.addbtn);
         mulBtn=findViewById(R.id.mulbtn);
         subBtn=findViewById(R.id.subbtn);
-        mulBtn=findViewById(R.id.divbtn);
-        result=findViewById(R.id.result);
+        divBtn=findViewById(R.id.divbtn);
+        clear=findViewById(R.id.clrbtn);
+        result=findViewById(R.id.resultview);
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
                 result.setText(Double.toString(resultF));
             }else{
-                    Toast.makeText(MainActivity.this,"Please Enter Valid Inputs",Toast.LENGTH_SHORT);
+                    Toast.makeText(MainActivity.this,"Please Enter Valid Inputs",Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -63,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
                     result.setText(Double.toString(resultF));
                 }else{
-                    Toast.makeText(MainActivity.this,"Please Enter Valid Inputs",Toast.LENGTH_SHORT);
+                    Toast.makeText(MainActivity.this,"Please Enter Valid Inputs",Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
                     result.setText(Double.toString(resultF));
                 }else{
-                    Toast.makeText(MainActivity.this,"Please Enter Valid Inputs",Toast.LENGTH_SHORT);
+                    Toast.makeText(MainActivity.this,"Please Enter Valid Inputs",Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -99,9 +100,20 @@ public class MainActivity extends AppCompatActivity {
 
                     result.setText(Double.toString(resultF));
                 }else{
-                    Toast.makeText(MainActivity.this,"Please Enter Valid Inputs",Toast.LENGTH_SHORT);
+                    Toast.makeText(MainActivity.this,"Please Enter Valid Inputs",Toast.LENGTH_SHORT).show();
                 }
 
+            }
+        });
+
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                input1.setText("");
+                input2.setText("");
+                result.setText("0.00");
+
+                input1.requestFocus();
             }
         });
     }
